@@ -115,7 +115,7 @@ if [ "$UPLOAD" = "YES" ]; then
     sendMessage "Uploading Build to  Osdn"
     scp -r out/target/product/"${DEVICE}"/Corvus_* corvusos@storage.osdn.net:/storage/groups/c/co/corvusos/"${DEVICE}"
     sendMessage "Moving  Build to h5ai"
-    mv out/target/product/"${DEVICE}"/Corvus_*.zip ~/Builds/"$DEVICE"/
+    sshpass -p "${PASSWORD}" scp out/target/product/"${DEVICE}"/Corvus_* root@144.76.104.197:/root/Builds/"$DEVICE"/
     sendMessage "Build Uploaded @ritzz97 send pling  link xD"
 fi
 
